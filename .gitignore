@@ -1,0 +1,7 @@
+/node_modules
+/.idea
+/__coverage__
+npm-debug.log*
+
+*.sublime-project
+*.sublime-workspace
