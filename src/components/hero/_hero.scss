@@ -1,0 +1,39 @@
+.hero {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+
+  .module-content {
+    position: relative;
+    max-width: 1280px;
+    padding: 0;
+  }
+
+
+  &__bg {
+    width: 100%;
+    height: 202px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    > img {
+      display: none;
+    }
+
+    @include bp($desktop-s) {
+      height: 479px;
+
+      > img {
+        display: block;
+      }
+    }
+  }
+
+  &__title {
+    @include absolute-center;
+    background-color: $black;
+    padding: 10px;
+  }
+}

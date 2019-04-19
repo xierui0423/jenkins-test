@@ -1,0 +1,150 @@
+.mobile-header {
+  $root: &;
+
+  @include bp($desktop-s) {
+    display: none;
+  }
+
+  &__bar {
+    display: table;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .5);
+  }
+
+  &__toggle {
+    border-right: 2px solid $grey;
+    padding: 18px 15px;
+    height: 50px;
+    width: 50px;
+
+    &-bar {
+      &,
+      &::before,
+      &::after {
+        display: block;
+        width: 20px;
+        height: 3px;
+        background-color: $black;
+        transition: transform .25s, background-color .25s;
+        position: relative;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+      }
+
+      &::before {
+        top: -6px;
+      }
+
+      &::after {
+        top: 3px;
+      }
+    }
+
+    &--expanded {
+      #{$root}__toggle-bar {
+        background-color: $white;
+
+        &::before {
+          transform: rotateZ(45deg);
+          top: 1px;
+        }
+
+
+        &::after {
+          transform: rotateZ(-45deg);
+          top: -2px;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    display: table-cell;
+    position: relative;
+    width: 100%;
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 14px;
+    font-size: 0;
+
+    .icon {
+      height: 30px;
+    }
+  }
+
+  .mobile-nav {
+    display: none;
+    height: calc(100vh - 50px);
+    overflow: auto;
+
+    &__link {
+      @include font-medium();
+      position: relative;
+      width: 100%;
+      display: inline-block;
+      padding: 30px 18px;
+      border-bottom: 1px solid $grey;
+      font-size: 14px;
+      line-height: 1.29;
+    }
+
+    &__sub-menu-toggle {
+      display: inline-block;
+      position: absolute;
+      height: 100%;
+      right: 0;
+      line-height: 100%;
+      top: 0;
+      width: 70px;
+      padding: 30px 18px 30px 30px;
+
+      .icon {
+        height: 20px;
+      }
+
+      &--expanded {
+        .icon {
+          transform: rotateZ(90deg);
+        }
+      }
+    }
+
+    &__sub-menu {
+      display: none;
+      background: $grey;
+      border-bottom: 1px solid $grey;
+
+      &-item {
+        padding: 18px;
+      }
+    }
+
+    &__footer {
+      background: $yellow;
+      padding: 30px 26px;
+
+      &-item {
+        margin-bottom: 20px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &-link {
+        @include font-medium();
+        font-size: 14px;
+        line-height: 1.57;
+        color: $white;
+        vertical-align: middle;
+        margin-left: 20px;
+
+        &:not(:only-child) {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

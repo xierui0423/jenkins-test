@@ -1,0 +1,55 @@
+// This can actually be a replaced by flexbox based solution if the project can drop legacy IE browsers
+// Be careful that even IE 10 and IE 11 are don't fully support flexbox, please make sure the test is conducted
+// https://caniuse.com/#search=flex
+
+// Creates a wrapper for a series of columns
+@mixin make-row($gutter: $grid-gutter-width) {
+  margin-right: floor(($gutter / -2));
+  margin-left: ceil(($gutter / -2));
+  clear: both;
+  @include clearfix;
+}
+
+// Generate the extra small columns
+@mixin make-column($columns, $breakpoint, $gutter: $grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-right: ($gutter / 2);
+  padding-left: ($gutter / 2);
+  margin-bottom: $grid-gutter-width-row;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include bp($breakpoint) {
+    float: left;
+    width: percentage(($columns / $grid-columns));
+
+    &:nth-child(#{12/$columns}n + 1) {
+      clear: both;
+    }
+
+    &:nth-last-child(-n + #{12/$columns}) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin make-column-offset($columns, $breakpoint) {
+  @include bp($breakpoint) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+
+@mixin make-column-push($columns, $breakpoint) {
+  @include bp($breakpoint) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+
+@mixin make-column-pull($columns, $breakpoint) {
+  @include bp($breakpoint) {
+    right: percentage(($columns / $grid-columns));
+  }
+}

@@ -1,0 +1,31 @@
+.richtext {
+  &:last-child {
+    >*:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    margin-bottom: 30px;
+
+    &:not(:first-child) {
+      margin-top: -20px;
+    }
+  }
+
+  li {
+    list-style-type: disc;
+    margin-left: 25px;
+    padding-left: 10px;
+  }
+}
+
+.accordion__item {
+  .richtext {
+    &:last-child {
+      >*:last-child {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

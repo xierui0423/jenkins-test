@@ -1,0 +1,37 @@
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.pt-40-m {
+  @include bp(0, $pad-m) {
+    padding-top: 40px !important;
+  }
+}
+
+.pt-60-d {
+  @include bp($pad-m) {
+    padding-top: 60px !important;
+  }
+}
+
+.pb-60-d {
+  @include bp($pad-m) {
+    padding-bottom: 60px !important;
+  }
+}
+
+
+.pt-90-d {
+  @include bp($pad-m) {
+    padding-top: 90px !important;
+  }
+}
+
+.pb-90-d {
+  @include bp($pad-m) {
+    padding-bottom: 90px !important;
+  }
+}
+
+
+

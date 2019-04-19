@@ -1,0 +1,30 @@
+html {
+  font-size: 10px;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: normal;
+  font-style: normal;
+  color: $white;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  @include font-book();
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  background-color: $black;
+  margin-top: $header-height-mobile;
+  position: relative;
+
+  @include bp($desktop-s) {
+    margin-top: $header-height-desktop;
+  }
+}

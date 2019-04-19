@@ -1,0 +1,66 @@
+multipleColumnsTeaser:
+  - title: 
+      text: Our work
+      tag: h2
+      class: h3
+    teasers:
+    - image: http://seekvectorlogo.com/wp-content/uploads/2018/01/millennium-hotels-and-resorts-vector-logo.png
+      title: 
+        text: Millennium Hotels and Resorts
+        tag: h2
+        class: h3
+      richtext: "<p>130+ hotels worldwide across key destinations including London, Paris, New York & more. Special member rates, exclusive dining discounts and complimentary Wi-Fi & treats. Earn Loyalty Points. Free Wi-Fi. No Booking Fees. Instant Members Discount. Destinations: London, Paris, New York.</p>"
+      cta:
+        text: Learn more
+        link: https://www.millenniumhotels.com/
+    - image: https://www.telegraph.co.uk/content/dam/Travel/leadAssets/27/49/HK-peninsula_2749868a.jpg?imwidth=450
+      title: 
+        text: Peninsula Hotels
+        tag: h2
+        class: h3
+      richtext: "<p>Book Online to Enjoy Complimentary Daily Breakfast & Other Privileges. Luxury Transportation. Website Exclusive Offer. Award-Winning Hotel. Official Website. Destinations: Beverly Hills, Chicago, Hong Kong, Shanghai, New York, Paris, Tokyo, Beijing, Bangkok, Manila.</p>"
+      cta:
+        text: Learn more
+        link: https://www.peninsula.com
+    - image: http://i.imgur.com/6JsjjLo.png
+      title: 
+        text: Kaiser Permanente
+        tag: h2
+        class: h3
+      richtext: <p>Kaiser Permanente is an American integrated managed care consortium, based in Oakland, California, United States, founded in 1945 by industrialist Henry J. Kaiser and physician Sidney Garfield.</p>
+      cta:
+        text: Learn more
+        link: https://healthy.kaiserpermanente.org/
+  - class: bg-yellow
+    title: 
+      text: Tech Stack
+      tag: h2
+      class: h3
+    teasers:
+      - image: https://www.learningpenguin.net/wp-content/uploads/2017/07/javascript_logo.png
+        title: 
+          text: JavaScript
+          tag: h3
+          class: h4
+        richtext: <p>We use different JavaScript approches based on project type and scales, from pure ES6 modules + jQuery to modern JS frameworks like React and Vue.</p>
+        cta:
+          text: Learn more
+          link: https://loweproferotech.atlassian.net/wiki/spaces/BTS/pages/791085227/JavaScript
+      - image: https://i1.wp.com/appliedparticletechnology.com/wp-content/uploads/2016/03/css-logo.png?fit=300%2C300&ssl=1
+        title: 
+          text: CSS
+          tag: h3
+          class: h4
+        richtext: <p>We mainly use preprocessor SASS (SCSS syntax) to build reusable and extenable CSS modules, following the BEM naming convention and ITCSS solution structure.</p>
+        cta:
+          text: Learn more
+          link: https://loweproferotech.atlassian.net/wiki/spaces/BTS/pages/791019699/CSS
+      - image: https://images.opencollective.com/proxy/images?src=https%3A%2F%2Fcl.ly%2F221T14472V23%2Ficon-big_x6ot1e.png&height=480
+        title: 
+          text: Compile and Bundle
+          tag: h3
+          class: h4
+        richtext: <p>We rely on the neat features Webpack provided to make compiling process that benifit both dev efficiency and produciton integrity.</p>
+        cta:
+          text: Learn more
+          link: https://loweproferotech.atlassian.net/wiki/spaces/BTS/pages/791183821/Debug+Build

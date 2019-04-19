@@ -1,0 +1,28 @@
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+
+  &-external {
+    float: right;
+
+    svg {
+      vertical-align: middle;
+    }
+  }
+
+  &-star {
+    height: 28px;
+    width: 28px;
+    overflow: hidden;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    svg {
+      position: relative;
+      left: -152px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+mixin offscreen-label(text, className)
+  - className = className || ""
+  span(class=className).l-offscreen=text
+
+mixin external-label()
+  block
+  +offscreen-label(". external page")
+
+mixin external-pages(ops)
+  - ops = ops || {}
+  - _class = ops._class || "ext-link"
+  +offscreen-label(". pages are external", _class)
+
+mixin skip-links()
+  .skip-links-nav
+    a(href="#main-anchor").l-offscreen Skip to page main content
+    a(href="#footer-anchor").l-offscreen Skip to page footer

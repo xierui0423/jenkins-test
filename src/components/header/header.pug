@@ -1,0 +1,8 @@
+include ./desktop/desktop-header
+include ./mobile/mobile-header
+
+mixin header(data)
+  header.header
+    +skip-links()
+    +mobile-header(data)
+    +desktop-header(data)

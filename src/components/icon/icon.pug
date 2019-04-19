@@ -1,0 +1,6 @@
+mixin icon(iconName, extension)
+  if iconName == 'external'
+    span.icon.icon-external
+      include ./external-arrow.html
+  else
+    img.icon(class=`icon-${iconName}` src=`../images/icon-${iconName}.${extension || 'png'}`, alt="")

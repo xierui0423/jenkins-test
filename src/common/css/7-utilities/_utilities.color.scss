@@ -1,0 +1,41 @@
+.bg-yellow {
+  background-color: $yellow;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  p,
+  a:not(:hover):not(:focus):not(.active) {
+    color: $black;
+  }
+
+
+  .button {
+    background-color: $black;
+    color: $yellow;
+
+    &:hover,
+    &:focus {
+      color: $black;
+      background-color: $white;
+    }
+  }
+}
+
+.color-black {
+  color: $black !important;
+}
+
+.color-main-black {
+  color: $black !important;
+}
+

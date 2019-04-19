@@ -1,0 +1,20 @@
+mixin multiple-columns-teaser(data)
+  - var teasers = data.multipleColumnsTeaser
+  .multiple-columns-teaser.module-container(class=teasers.class, data-js-equal-height)
+    .module-content
+      if(teasers.title)
+        #{teasers.title.tag}.multiple-columns-teaser__title(class=teasers.title.class) !{teasers.title.text}
+      .grid-container.grid-container--3-columns
+        each teaser in teasers.teasers
+          .grid-item
+            +teaser(teaser, teasers.title ? "h3" : "h2")
+
+mixin teaser(teaser)
+  .teaser
+    div(data-js-equal-height-item)
+      img.teaser__image(src=teaser.image, alt=teaser.alt || "alt text")
+    #{teaser.title.tag}.teaser__title(class=teaser.title.class) !{teaser.title.text}
+    .richtext !{teaser.richtext}
+    if(teaser.cta)
+      a(href=teaser.cta.link || "#", aria-label="learn more on XXX") !{teaser.cta.text}
+          

@@ -1,0 +1,108 @@
+  .desktop-header {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .5);
+    display: none;
+    transition: margin-top .5s;
+
+    @include bp($desktop-s) {
+      display: block;
+    }
+
+    .logo-section {
+      padding: 0 40px;
+      font-size: 0;
+      line-height: initial;
+
+      .icon {
+        height: 32px;
+      }
+    }
+
+    .top-section,
+    .nav {
+      @include clearfix;
+
+      text-align: right;
+
+      &__menu {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      &__item {
+        float: left;
+      }
+    }
+
+    .top-section {
+      padding: 20px 38px 10px 38px;
+
+      &__item {
+        height: 20px;
+        padding: 0 10px;
+        border-right: 2px solid $grey;
+
+        &:last-child {
+          border: 0;
+        }
+      }
+
+      &__link {
+        font-size: 13px;
+        line-height: 1.69;
+        float: left;
+      }
+    }
+
+    .nav {
+      padding: 43px 20px 0 20px;
+
+      &__item {
+        margin-right: 30px;
+        padding-bottom: 28px;
+        position: relative;
+      }
+
+      &__link {
+        font-size: 16px;
+        line-height: 1.63;
+      }
+
+      &__sub-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: $grey;
+        padding: 30px;
+        text-align: left;
+
+        &-first,
+        &-second {
+          display: table-cell;
+        }
+
+        &-item {
+          padding: 10px 20px 10px 10px;
+          width: 200px;
+
+          .icon {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    .icon-location {
+      float: left;
+      height: 17px;
+      margin-right: 10px;
+    }
+
+    .icon-search {
+      width: auto;
+      height: 70%;
+      position: absolute;
+      left: 0;
+      top: 15%;
+    }
+  }

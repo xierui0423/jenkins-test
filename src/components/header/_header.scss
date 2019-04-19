@@ -1,0 +1,19 @@
+@import "./desktop/desktop-header";
+@import "./mobile/mobile-header";
+
+.header {
+  z-index: $nav-z-index;
+  position: fixed;
+  background: $white;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  a {
+    @include font-book();
+
+    &:not(:hover):not(:focus):not(.active) {
+      color: $black;
+    }
+  }
+}

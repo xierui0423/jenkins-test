@@ -1,0 +1,57 @@
+/**
+ * Component name:
+ * `.font` - .font-medium .font-light .font-book
+ *
+ *     @example
+ *     h1.font.font-medium Gotham Medium
+ *     h1.font.font-book Gotham Book
+ *     h1.font.font-light Gotham Light
+ *     h1.font.font-bold Gotham Bold
+ */
+
+$font-light:  "Gotham Ligh";
+$font-book:  "Gotham Book";
+$font-medium:  "Gotham Medium";
+$font-bold:  "Gotham Bold";
+$fallback: "Verdana", "Avenir";
+
+@font-face {
+  font-family: $font-light;
+  src: url("../fonts/Gotham-Light.eot?");
+  src: local("☺"), url("../fonts/Gotham-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Gotham-Light.woff") format("woff"), url("../fonts/Gotham-Light.ttf") format("truetype"), url("../fonts/Gotham-Light.svg#TisaSansOT") format("svg");
+}
+
+@font-face {
+  font-family: $font-book;
+  src: url("../fonts/Gotham-Book.eot?");
+  src: local("☺"), url("../fonts/Gotham-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/Gotham-Book.woff") format("woff"), url("../fonts/Gotham-Book.ttf") format("truetype"), url("../fonts/Gotham-Book.svg#TisaSansOT") format("svg");
+}
+
+@font-face {
+  font-family: $font-medium;
+  src: url("../fonts/Gotham-Medium.eot?");
+  src: local("☺"), url("../fonts/Gotham-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Gotham-Medium.woff") format("woff"), url("../fonts/Gotham-Medium.ttf") format("truetype"), url("../fonts/Gotham-Medium.svg#TisaSansOT") format("svg");
+}
+
+@font-face {
+  font-family: $font-bold;
+  src: url("../fonts/Gotham-Bold.eot?");
+  src: local("☺"), url("../fonts/Gotham-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Gotham-Bold.woff") format("woff"), url("../fonts/Gotham-Bold.ttf") format("truetype"), url("../fonts/Gotham-Bold.svg#TisaSansOT") format("svg");
+}
+
+@mixin font-light {
+  font-family: $font-light, $fallback;
+  -webkit-font-smoothing: antialiased;
+}
+@mixin font-book {
+  font-family: $font-book, $fallback;
+  -webkit-font-smoothing: antialiased;
+}
+@mixin font-medium {
+  font-family: $font-medium, $fallback;
+  -webkit-font-smoothing: antialiased;
+}
+@mixin font-bold {
+  font-family: $font-bold, $fallback;
+  -webkit-font-smoothing: antialiased;
+}

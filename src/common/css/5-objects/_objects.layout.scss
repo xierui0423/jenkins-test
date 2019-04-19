@@ -1,0 +1,240 @@
+
+.module-container {
+  position: relative;
+  padding: 60px 16px;
+
+  .module-container {
+    padding-left: 0;
+    padding-right: 0;
+
+    &.bg-yellow {
+      width: calc(100% + 32px);
+      left: -16px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  &:not(.bg-yellow) {
+    @include bp($pad-m) {
+      padding: 90px 16px;
+    }
+  }
+
+  &:not(.bg-yellow)+&:not(.bg-yellow),
+  &.bg-yellow+&.bg-yellow {
+    padding-top: 0;
+  }
+}
+
+.module-content {
+  position: relative;
+  margin: 0 auto;
+  max-width: 940px;
+
+  &--narrow {
+    max-width: 620px;
+    text-align: center;
+  }
+
+  &--wide {
+    max-width: 1280px;
+  }
+
+  &--no-top-bottom-padding {
+    padding: 0 16px;
+  }
+}
+
+.grid-container {
+  @include make-row();
+
+  &--2-columns {
+    .grid-item {
+      @include make-column(6, $pad-m);
+
+      &:nth-last-child(2n+1):first-child,
+      &:nth-last-child(2n+1):first-child~.grid-item {
+        &:last-child {
+          @include make-column-offset(3, $pad-m);
+        }
+      }
+    }
+  }
+
+  &--3-columns {
+    .grid-item {
+      @include make-column(4, $pad-m);
+
+      &:nth-last-child(3n+1):first-child,
+      &:nth-last-child(3n+1):first-child~.grid-item {
+        &:last-child {
+          @include make-column-offset(4, $pad-m);
+        }
+      }
+
+      &:nth-last-child(3n+2):first-child,
+      &:nth-last-child(3n+2):first-child~.grid-item {
+        &:nth-last-child(2) {
+          @include make-column-offset(2, $pad-m);
+        }
+      }
+    }
+  }
+
+  &--4-columns {
+    .grid-item {
+      @include make-column(3, $pad-m);
+
+      &:nth-last-child(4n+1):first-child,
+      &:nth-last-child(4n+1):first-child~.grid-item {
+        &:last-child {
+          @include make-column-offset(4.5, $pad-m);
+        }
+      }
+
+      &:nth-last-child(4n+2):first-child,
+      &:nth-last-child(4n+2):first-child~.grid-item {
+        &:nth-last-child(2) {
+          @include make-column-offset(3, $pad-m);
+        }
+      }
+
+      &:nth-last-child(4n+3):first-child,
+      &:nth-last-child(4n+3):first-child~.grid-item {
+        &:nth-last-child(3) {
+          @include make-column-offset(1.5, $pad-m);
+        }
+      }
+    }
+  }
+
+  // stylelint-disable
+  &--1-1,
+  &--1-2,
+  &--1-3 {
+    display: table;
+    width: 100%;
+    margin: 0;
+
+    .grid-item {
+      @include make-column(6, $pad-m);
+      padding: 0;
+    }
+
+    @include bp($pad-m) {
+      .grid-item {
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        float: none;
+
+        &:first-child {
+          padding-right: 10px;
+        }
+
+        &:last-child {
+          padding-left: 10px;
+        }
+      }
+
+      &.grid-container--mirror {
+        .grid-item {
+          &:first-child {
+            padding-right: 0;
+            padding-left: 10px;
+          }
+
+          &:last-child {
+            padding-left: 0;
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  &--1-1 {
+    &.grid-container--mirror {
+      .grid-item {
+        @include bp($pad-m) {
+          &:first-child {
+            left: 50%;
+          }
+
+          &:last-child {
+            left: -50%;
+          }
+        }
+      }
+    }
+  }
+
+  &--1-2 {
+    .grid-item {
+      @include bp($pad-m) {
+        &:first-child {
+          width: 33.33%;
+        }
+
+        &:last-child {
+          width: 66.66%;
+        }
+      }
+    }
+
+    &.grid-container--mirror {
+      .grid-item {
+        @include bp($pad-m) {
+          &:first-child {
+            left: 66.66%;
+          }
+
+          &:last-child {
+            left: -33.33%;
+          }
+        }
+      }
+    }
+  }
+
+  &--1-3 {
+    .grid-item {
+      @include bp($pad-m) {
+        &:first-child {
+          width: 25%;
+        }
+
+        &:last-child {
+          width: 75%;
+        }
+      }
+    }
+
+    &.grid-container--mirror {
+      .grid-item {
+        @include bp($pad-m) {
+          &:first-child {
+            left: 75%;
+          }
+
+          &:last-child {
+            left: -25%;
+          }
+        }
+      }
+    }
+  }
+
+  // stylelint-enable
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -100px;
+
+  @include bp($pad-m) {
+    top: -140px;
+  }
+}

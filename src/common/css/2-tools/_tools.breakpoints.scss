@@ -1,0 +1,14 @@
+// following mobile first ideology, we always start from mobile layout and then use only min-width breakpoints to override the style with wider screen
+@mixin bp($minpoint, $maxpoint: false) {
+  @if($maxpoint) {
+    @media (min-width: $minpoint) and (max-width: $maxpoint - 1) {
+      @content ;
+    }
+  }
+
+  @else {
+    @media (min-width: $minpoint) {
+      @content ;
+    }
+  }
+}

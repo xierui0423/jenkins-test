@@ -1,0 +1,34 @@
+mixin mobile-header()
+  - var header = data.header
+  .mobile-header(data-js-ada-hidden="1023", data-asc="true", data-js-mobile-header)
+    .mobile-header__bar
+      button.mobile-header__toggle(type="button", data-js-mobile-menu-toggle, aria-haspopup="true", aria-expanded="false", aria-controls="mobile-nav", aria-label="toggle mobile navigation")
+        span.mobile-header__toggle-bar
+      .mobile-header__logo
+        a(href="./home-page.html", aria-label="go to homepage")
+          +icon("logo", "svg")
+    nav.mobile-nav#mobile-nav(data-js-mobile-menu, aria-hidden="true", role="dialog", aria-label="main navigation")
+      ul.mobile-nav__menu(role="menubar")
+        each item in header.navItems
+          li.mobile-nav__item(data-js-mobile-menu-item)
+            a.mobile-nav__link(class= item.active ? "active" : "", href=item.link || '#' role="menuitem", target=item.external ? '_blank' : false, rel=item.external ? "noopener noreferrer" : false) !{item.text}
+              if(item.external)
+                +external-label
+                +icon("external")
+              if(item.subItems)
+                button.mobile-nav__sub-menu-toggle(type="button", data-js-mobile-sub-menu-toggle, aria-haspopup= "true", aria-expanded= "false" aria-controls="mobile-"+item.subMenuId)
+                  +icon("chevron")
+            if(item.subItems)
+              ul.mobile-nav__sub-menu(id="mobile-"+item.subMenuId, aria-hidden="true", data-js-mobile-sub-menu, role="menu")
+                each subItem in item.subItems
+                  li.mobile-nav__sub-menu-item
+                    a.mobile-nav__sub-menu-link(class= subItem.active ? "active" : "", href=subItem.link || '#' role="menuitem", aria-current = subItem.active ? "page" : false, target=subItem.external ? '_blank' : false, rel=subItem.external ? "noopener noreferrer" : false) !{subItem.text}
+                      if(subItem.external)
+                        +external-label
+                        +icon("external")
+      ul.mobile-nav__footer
+        each item in header.altItems
+          li.mobile-nav__footer-item
+            if(item.icon) 
+              +icon(item.icon)
+            a.mobile-nav__footer-link(href=item.link || '#') !{item.text}

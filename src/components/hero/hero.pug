@@ -1,0 +1,6 @@
+mixin hero(data)
+  - var hero = data.hero
+    .hero
+      .module-content
+        .hero__bg(aria-label="hero image", data-js-bg-loader=hero.heroImage.src,data-js-bg-loader-mobile=hero.heroImageMobile.src)
+          h1.hero__title !{hero.title}

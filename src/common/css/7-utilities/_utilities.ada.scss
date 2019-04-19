@@ -1,0 +1,22 @@
+.l-offscreen {
+  opacity: 0;
+  position: absolute;
+  left: -9999px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+
+  &:focus {
+    opacity: 1;
+    left: 0;
+    z-index: 1;
+    -ms-filter: none;
+  }
+}
+
+a,
+[tabindex="0"],
+[tabindex="1"] {
+  &:focus,
+  &:active {
+    @include outline;
+  }
+}

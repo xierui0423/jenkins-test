@@ -1,0 +1,5 @@
+mixin footer(data)
+  - var footer = data.footer
+  footer.footer
+    a(name="footer-anchor", tabindex="-1")#footer-anchor.l-offscreen Footer Content
+    | !{footer.copyright}

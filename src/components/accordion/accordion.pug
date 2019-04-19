@@ -1,0 +1,21 @@
+mixin accordion(data)
+  - data = data.accordion
+  .accordion.module-container(data-js-accordion, class=data.class)
+    if(data.anchor)
+      a.anchor(id=data.anchor.id, data-js-anchor=data.anchor.name)
+    .module-content(class=data.narrow?"module-content--narrow":"")
+      if(data.title)
+        #{data.title.tag || "h2"}.accordion__title(class=data.title.class) !{data.title.text || data.title}
+      each item, index in data.items
+        .accordion__item(data-js-accordion-item, class=data.expanded ? "accordion__item--expanded": "")
+          button.accordion__item-header(type="button", data-js-accordion-toggle, aria-expanded=data.expanded ? "true" : "false", aria-controls=`accordion-item-${index}`)
+            span.accordion__item-toggle
+            #{item.title.tag || "h3"}.accordion__item-title(class=item.title.class) !{item.title.text || item.title}
+          .accordion__item-content(id=`accordion-item-${index}`, data-js-accordion-content, aria-hidden=data.expanded ? "false" : "true", style=`${data.expanded? 'display: block': ''}`) 
+            if(block)
+              block
+            else
+              | !{item.content}
+      if(data.footer)
+        .module-content.module-content--narrow
+          a.accordion__footer(href=data.footer.link || "#") !{data.footer.text}

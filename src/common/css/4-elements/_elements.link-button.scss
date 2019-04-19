@@ -1,0 +1,76 @@
+a {
+  @include font-medium();
+  color: $yellow;
+  outline: 0;
+  text-decoration: none;
+
+  &--arrow {
+    &::after {
+      margin-left: 5px;
+      content: ">";
+    }
+  }
+}
+
+a.active,
+a:hover,
+a:focus {
+  text-decoration: underline;
+  color: $red;
+}
+
+// Standard styles for the titles, article content, etc.
+.button {
+  @include font-medium();
+  display: table;
+  background-color: $yellow;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 22px;
+  color: $white;
+  padding: 19px;
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+  min-width: 160px;
+
+  @include bp($pad-m) {
+    width: auto;
+  }
+
+  &--big {
+    @include font-book();
+    font-size: 24px;
+    line-height: 1.33;
+    padding: 30px;
+  }
+
+  &--small {
+    @include font-medium();
+    font-size: 14px;
+    padding: 16px 42px;
+  }
+
+  &:hover,
+  &:focus,
+  &--white:hover,
+  &--white:focus,
+  &--dark {
+    color: $white;
+    background-color: $dark-blue;
+  }
+
+  &--dark:hover,
+  &--dark:focus,
+  &--white {
+    color: $yellow;
+    background-color: $white;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    color: $grey;
+    background-color: $darker-grey;
+  }
+}

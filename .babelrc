@@ -1,0 +1,12 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "useBuiltIns": "entry",
+        // "exclude": ["es6.string.starts-with"]
+      }
+    ]
+  ]
+}

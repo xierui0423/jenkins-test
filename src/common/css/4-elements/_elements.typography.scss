@@ -1,0 +1,12 @@
+p {
+  font-size: 14px;
+  line-height: 1.57;
+  margin-bottom: 30px;
+}
+
+
+
+strong,
+b {
+  @include font-medium();
+}

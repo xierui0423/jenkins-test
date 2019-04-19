@@ -1,0 +1,30 @@
+altItems: 
+  - text: MLP IDC Chengdu
+    link: https://www.mullenloweprofero.com/contact/chengdu
+    icon: location
+    external: true
+
+logo: ../images/feds-logo.png
+
+navItems: 
+  - text: Our Projects
+    active: true
+    link: ./why-kp.html
+    subMenuId: sub-menu-1
+    subItems:
+      - text: Millennium Hotels and Resorts
+        link: https://www.millenniumhotels.com/
+        external: true
+      - text: Kaiser Permanente
+        link: https://healthy.kaiserpermanente.org/
+        external: true
+      - text: Peninsula Hotels
+        link: https://www.peninsula.com
+        external: true
+    subItemsSecondary:
+      - text: Houlihan Lokey
+        link: https://www.hl.com/
+        external: true
+  - text: Our Team
+    link: https://www.mullenloweprofero.com/company
+    external: true

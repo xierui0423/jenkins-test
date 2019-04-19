@@ -1,0 +1,44 @@
+mixin desktop-header(data)
+  - var header = data.header
+  .desktop-header(data-js-ada-hidden="1023", data-js-desktop-header)
+    .module-content.module-content--wide
+      .top-section
+        ul.top-section__menu
+          each item in header.altItems
+            li.top-section__item
+              if(item.icon)
+                +icon(item.icon)
+              a.top-section__link(href=item.link || '#', target=item.external ? '_blank' : false, rel=item.external ? "noopener noreferrer" : false) !{item.text}
+                if(item.external)
+                  +external-label
+                  +icon("external")
+      .logo-section
+        a(href="./home-page.html", aria-label="go to homepage")
+          +icon("logo", "svg")
+
+      nav.nav(aria-label="main navigation")
+        ul.nav__menu(role="menubar", data-js-menu)
+          each item in header.navItems
+            li.nav__item(data-js-menu-item)
+              a.nav__link(class= item.active ? "active" : "", href=item.link || '#' role="menuitem", aria-haspopup= item.subItems ? "true":"false", aria-expanded= item.subItems ? "false":false, aria-controls=item.subMenuId, target=item.external ? '_blank' : false, rel=item.external ? "noopener noreferrer" : false) !{item.text}
+                if(item.external)
+                  +external-label
+                  +icon("external")
+              if(item.subItems)
+                div.nav__sub-menu(id=item.subMenuId, data-js-sub-menu, aria-hidden="true")
+                  +desktop-sub-menu(item.subItems)
+                  if(item.subItemsSecondary)
+                    +desktop-sub-menu(item.subItemsSecondary, true)
+
+    
+mixin desktop-sub-menu(items, secondary)
+  ul(class=`nav__sub-menu-${secondary ? "second" :"first"}`, role="menu")
+    each item in items
+      li.nav__sub-menu-item(data-js-menu-item)
+        a.nav__sub-menu-link(class= item.active ? "active" : "", href=item.link || '#' role="menuitem", aria-current = item.active ? "page" : false, target=item.external ? '_blank' : false, rel=item.external ? "noopener noreferrer" : false)
+          if(item.icon)
+            +icon(item.icon)
+          | !{item.text}
+          if(item.external)
+            +external-label
+            +icon("external")

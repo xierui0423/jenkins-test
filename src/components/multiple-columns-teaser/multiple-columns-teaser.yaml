@@ -1,0 +1,27 @@
+teasers:
+  - image: https://via.placeholder.com/300x200
+    title:
+      text: Specialty Care
+      tag: h2
+      class: h3
+    richtext: <p> From cancer to cardiology to high blood pressure and stroke, the excellent care we provide for these conditions and others leads to healthier outcomes for our members.</p>
+    cta:
+      text: Learn more
+      tag: h2
+      class: h3¬
+  - image: https://via.placeholder.com/300x200
+    title:
+      text: Convenient Care
+      tag: h2
+      class: h3
+    richtext: <p> Choose how, when and where to get the care you and your family need. You can get and manage your care online, by phone, at our facilities and more.</p>
+    cta:
+      text: Learn more
+  - image: https://via.placeholder.com/300x200
+    title:
+      text: Healthy Rewards
+      tag: h2
+      class: h3
+    richtext: <p> With cash rewards for taking healthy steps and no charge for programs and drugs to help you quit smoking, you&apos;ve got a plan that can help you feel your best.</p>
+    cta:
+      text: Learn more

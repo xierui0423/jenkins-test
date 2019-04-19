@@ -1,0 +1,36 @@
+.multiple-columns-teaser {
+  &__title {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.teaser {
+  &__image {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  h3,
+  .h3 {
+    margin-bottom: 10px;
+
+    @include bp ($pad-m) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .h3 {
+    @include font-light;
+  }
+
+  a {
+    &::after {
+      margin-left: 5px;
+      content: ">";
+    }
+  }
+}
