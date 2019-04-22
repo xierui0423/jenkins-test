@@ -15,8 +15,6 @@
 ## Who do I talk to?
 * Please contact IDC [FE Tech Lead](mailto:ray.xie@mullenloweprofero.com) in case you have any questions or suggestions.
 
-<br/>
-
 # Branch Specific (basic)
 
 This basic project template can be used with any typical CMS sites without complicated FE render logic.
