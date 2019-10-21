@@ -6,6 +6,8 @@ module.exports = function config(env) {
     // 'top-doctors',
   ];
 
+  // TODO Pass the compilation pages as a cmd parameter
+
   // eslint-disable-next-line
   return require(`./webpack.${env}.js`)(env, compilePages);
 };
