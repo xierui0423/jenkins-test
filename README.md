@@ -17,7 +17,7 @@
 
 # Branch Specific (basic)
 
-This basic project template can be used with any typical CMS sites without complicated FE render logic.
+This basic project template can be used with any typical CMS sites with heavy server side rendering
 
 Examples (similar but may not be exactly match to the structure of this boilerplate branch as they were built prior to this repo):
 
@@ -40,6 +40,24 @@ src
 ├─ entry # entry files of the js and css bundle, as well as the html template
 
 └─ pages # static page templates with page specific data feeds
+
+## Develop and deploy
+### npm scripts:
+
+run-local: start the local dev server (webpack.local.js) with HMR
+
+build-dev: generate compiled dev code (webpack.dev.js) to the dist folder
+
+build-product: generate compiled production code (webpack.prod.js) to the prod folder
+
+eslint and stylelint: run linters against the repo
+
+debug-build-dev and debug-run-local: debug the compilation process in NodeJs
+
+## Coding convention
+js: [eslint-config-airbnb-base](https://github.com/airbnb/javascript) 
+
+css:[stylelint-scss](https://github.com/kristerkari/stylelint-scss), [css guideline](https://loweproferotech.atlassian.net/wiki/spaces/BTS/pages/791019699/CSS)
 
 ## Dependencies
 
