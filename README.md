@@ -15,8 +15,6 @@
 ## Who do I talk to?
 * Please contact IDC [FE Tech Lead](mailto:ray.xie@mullenloweprofero.com) in case you have any questions or suggestions.
 
-<br/>
-
 # Branch Specific (basic)
 
 This basic project template can be used with any typical CMS sites without complicated FE render logic.
@@ -28,12 +26,19 @@ Examples (similar but may not be exactly match to the structure of this boilerpl
 
 ## Project structure
 dist - compiled code (uncompressed)
+
 prod - compiled code (compressed)
+
 src
+
 ├─ assets # static assets such as images and font files
+
 ├─ common # shared resources like global css, html mixins and util js
+
 ├─ components # reusable components
+
 ├─ entry # entry files of the js and css bundle, as well as the html template
+
 └─ pages # static page templates with page specific data feeds
 
 ## Dependencies
